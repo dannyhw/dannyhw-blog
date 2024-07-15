@@ -57,9 +57,6 @@
   input {
     font-size: 16px;
   }
-  table {
-    width: 100%;
-  }
   img {
     max-width: 100%;
     height: auto;
@@ -74,17 +71,104 @@
     padding: 1.5em;
     border-radius: 8px;
   }
+
   pre > code {
     all: unset;
   }
+
   blockquote {
     border-left: 4px solid var(--accent);
     padding: 0 0 0 20px;
     margin: 0px;
     font-size: 1.333em;
   }
+
   hr {
     border: none;
     border-top: 1px solid rgb(var(--gray-light));
+  }
+
+  ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+  }
+
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+
+  table {
+    position: relative; /* Needed for sticky headers */
+
+    width: 100%;
+
+    table-layout: fixed; /* Uses first row to size. This renders faster for regular tables. */
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  th,
+  td {
+    padding: 0.5em;
+
+    border-width: 0.5px;
+    border-style: solid solid none none;
+    border-color: #ccc;
+
+    text-align: left;
+
+    font-variant-numeric: tabular-nums; /* Size numbers so they’re easy to compare across rows. */
+  }
+
+  thead > tr > th:first-of-type,
+  tbody > tr > *:first-child {
+    border-left-style: solid;
+  }
+
+  thead th[scope="column"] {
+    position: sticky; /* Fixed headers */
+    z-index: 10;
+    top: -1px; /* Compensate for the top border so there’s no gap when sticky. */
+
+    background-color: #eee;
+  }
+
+  tbody > tr:last-of-type > * {
+    border-bottom-style: solid;
+  }
+  /* Clear the border for when there’s a zero-padding wrapper */
+  thead > tr > th {
+    border-top-style: none;
+  }
+
+  tr > *:last-child {
+    border-right-style: none;
+  }
+
+  thead > tr > th:first-of-type,
+  tbody > tr > *:first-child {
+    border-left-style: none;
+  }
+
+  tbody > tr:last-of-type > * {
+    border-bottom-style: none;
   }
 }

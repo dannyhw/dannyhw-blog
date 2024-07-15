@@ -24,7 +24,7 @@ const posts = (await getCollection("blog")).sort(
 
       <main>
         <section>
-          <ul class="flex flex-wrap md:gap-8 gap-2 list-none m-0 p-0">
+          <ul class="flex flex-wrap md:gap-8 gap-4 list-none m-0 p-0">
             {
               posts.map((post, i) => (
                 <li class="group w-full md:w-[calc(50%-1rem)] md:first:w-full">
@@ -39,7 +39,7 @@ const posts = (await getCollection("blog")).sort(
                         src={post.data.heroImage}
                         loading={i < 6 ? "eager" : "lazy"}
                         alt=""
-                        class="group-hover:shadow-md group-first:w-full"
+                        class="group-hover:shadow-md group-first:w-full rounded-lg mb-2"
                       />
                     )}
 

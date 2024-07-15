@@ -3,8 +3,8 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header class="bg-white">
-  <nav class="flex items-center justify-between py-2">
+<header class="bg-white mb-4">
+  <nav class="flex items-center justify-between py-4">
     <!-- <h2 class="m-0 text-base">
       <a class="no-underline" href="/">{SITE_TITLE}</a>
     </h2> -->
@@ -18,8 +18,12 @@ import { SITE_TITLE } from "../consts";
     </div>
 
     <div class="flex gap-x-2">
-      <a href="https://m.webtoo.ls/@astro" target="_blank">
-        <span class="sr-only">Follow Astro on Mastodon</span>
+      <a
+        class="hover:text-indigo-700 transition-all"
+        href="https://fosstodon.org/@dannyhw"
+        target="_blank"
+      >
+        <span class="sr-only">Follow me on Mastodon</span>
 
         <svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16">
           <path
@@ -30,8 +34,12 @@ import { SITE_TITLE } from "../consts";
         </svg>
       </a>
 
-      <a href="https://twitter.com/astrodotbuild" target="_blank">
-        <span class="sr-only">Follow Astro on Twitter</span>
+      <a
+        class="hover:text-indigo-700 transition-all"
+        href="https://x.com/Danny_H_W"
+        target="_blank"
+      >
+        <span class="sr-only">Follow me on Twitter</span>
 
         <svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16">
           <path
@@ -42,8 +50,12 @@ import { SITE_TITLE } from "../consts";
         </svg>
       </a>
 
-      <a href="https://github.com/withastro/astro" target="_blank">
-        <span class="sr-only">Go to Astro's GitHub repo</span>
+      <a
+        class="hover:text-indigo-700 transition-all"
+        href="https://github.com/dannyhw"
+        target="_blank"
+      >
+        <span class="sr-only">Go to my GitHub repo</span>
 
         <svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16">
           <path

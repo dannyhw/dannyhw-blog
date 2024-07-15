@@ -13,10 +13,11 @@ const isActive = href === pathname || href === "/" + subpath?.[0];
 <a
   href={href}
   class:list={[
-    "inline-block",
+    "inline-block hover:underline transition-all",
     {
-      ["font-extrabold underline"]: isActive,
-      ["no-underline"]: !isActive,
+      ["font-extrabold underline text-indigo-700 hover:text-indigo-500"]:
+        isActive,
+      ["no-underline hover:text-indigo-400"]: !isActive,
     },
     className,
   ]}

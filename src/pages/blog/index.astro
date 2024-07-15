@@ -15,76 +15,8 @@ const posts = (await getCollection("blog")).sort(
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <!-- <style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style> -->
   </head>
+
   <body class="w-screen flex justify-center">
     <div class="max-w-screen-lg w-full px-4">
       <Header />
@@ -94,9 +26,9 @@ const posts = (await getCollection("blog")).sort(
           <ul class="flex flex-wrap md:gap-8 gap-2 list-none m-0 p-0">
             {
               posts.map((post) => (
-                <li class="w-full md:w-[calc(50%-1rem)]">
+                <li class="group w-full md:w-[calc(50%-1rem)] md:first:w-full">
                   <a
-                    class="hover:text-indigo-700 no-underline transition-all"
+                    class="group-hover:text-indigo-700 no-underline transition-all"
                     href={`/blog/${post.slug}/`}
                   >
                     <img
@@ -104,12 +36,14 @@ const posts = (await getCollection("blog")).sort(
                       height={360}
                       src={post.data.heroImage}
                       alt=""
-                      class="hover:shadow-md"
+                      class="group-hover:shadow-md group-first:w-full"
                     />
 
-                    <h4 class="title">{post.data.title}</h4>
+                    <h4 class="m-0 text-black group-hover:text-indigo-700 text-2xl group-first:md:text-4xl">
+                      {post.data.title}
+                    </h4>
 
-                    <p class="date">
+                    <p class="text-gray-500 group-hover:text-indigo-700">
                       <FormattedDate date={post.data.pubDate} />
                     </p>
                   </a>

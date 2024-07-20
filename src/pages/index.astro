@@ -1,8 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BlogCard from "../components/BlogCard.astro";
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .slice(0, 3);
 ---
 
 <!doctype html>
@@ -10,12 +16,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="w-screen flex justify-center">
+  <body class="w-screen flex justify-center dark:bg-slate-800 dark:text-white">
     <div class="max-w-screen-lg w-full px-4">
       <Header />
 
       <main>
-        <h1>🧑‍🚀 Hello, Astronaut!</h1>
+        <div class="flex flex-col gap-y-4">
+          <h1 class="text-4xl">Daniel Williams</h1>
+
+          <p>
+            I'm a developer specialised in React and React Native with
+            experience across the tech stack for web and mobile applications.
+          </p>
+
+          <ul class="flex flex-wrap md:gap-8 gap-4 list-none m-0 p-0">
+            {posts.map((post) => <BlogCard post={post} loading="eager" />)}
+          </ul>
+        </div>
       </main>
 
       <Footer />

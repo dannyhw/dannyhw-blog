@@ -29,9 +29,23 @@ const posts = (await getCollection("blog"))
             experience across the tech stack for web and mobile applications.
           </p>
 
-          <ul class="flex flex-wrap md:gap-8 gap-4 list-none m-0 p-0">
-            {posts.map((post) => <BlogCard post={post} loading="eager" />)}
-          </ul>
+          <h2 class="text-3xl mt-10">Open source projects</h2>
+
+          <p>
+            I'm a maintainer of React Native Storybook and other supporting
+            libraries. I've also recently gotten involved with maintaining
+            Create Expo Stack.
+          </p>
+
+          <!-- add images here -->
+
+          <div class="mt-10 flex flex-col gap-y-4">
+            <h2 class="text-3xl">Recent Blog Posts</h2>
+
+            <ul class="flex flex-wrap md:gap-8 gap-4 list-none m-0 p-0">
+              {posts.map((post) => <BlogCard post={post} loading="eager" />)}
+            </ul>
+          </div>
         </div>
       </main>
 

@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import BlogCard from "../components/BlogCard.astro";
+import Footer from "../components/Footer.astro";
 import GithubCard from "../components/GithubCard.astro";
+import Header from "../components/Header.astro";
 import TechnologyTag from "../components/TechnologyTag.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())

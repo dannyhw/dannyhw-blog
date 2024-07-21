@@ -23,14 +23,10 @@ const posts = (await getCollection("blog")).sort(
     <div class="max-w-screen-lg w-full px-4">
       <Header />
 
-      <main>
+      <main class="px-4">
         <section>
           <ul class="flex flex-wrap md:gap-8 gap-4 list-none m-0 p-0">
-            {
-              posts.map((post, i) => (
-                <BlogCard post={post} loading={i < 6 ? "eager" : "lazy"} />
-              ))
-            }
+            {posts.map((post, i) => <BlogCard post={post} lazyLoad={i > 4} />)}
           </ul>
         </section>
       </main>

@@ -1,0 +1,18 @@
+---
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  name: string;
+  svg: string;
+  highlightColor: string;
+}
+
+const { name, svg, highlightColor } = Astro.props;
+---
+
+<div
+  class={`p-2 flex flex-row gap-2 border border-gray-200 rounded-lg justify-center items-center hover:shadow-sm transition-all hover:border-${highlightColor}-500`}
+>
+  <Image width={24} height={24} src={`/${svg}.svg`} alt={`${name} icon`} />
+  <p>{name}</p>
+</div>

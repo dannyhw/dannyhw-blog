@@ -13,7 +13,7 @@ const { post, lazyLoad } = Astro.props;
 
 <li class="group w-full md:w-[calc(50%-1rem)] md:first:w-full">
   <a
-    class="group-hover:text-indigo-700 dark:group-hover:text-indigo-400 no-underline transition-all"
+    class="no-underline transition-all group-hover:text-indigo-700 dark:group-hover:text-indigo-400"
     href={`/blog/${post.slug}/`}
   >
     {
@@ -24,19 +24,19 @@ const { post, lazyLoad } = Astro.props;
           src={post.data.heroImage}
           loading={lazyLoad ? "lazy" : "eager"}
           alt=""
-          class="group-hover:shadow-md group-first:w-full rounded-lg mb-2"
+          class="mb-2 rounded-lg group-first:w-full group-hover:shadow-md"
         />
       )
     }
 
     <h4
-      class="m-0 text-black dark:text-white group-hover:text-indigo-700 dark:group-hover:text-indigo-400 text-2xl group-first:md:text-4xl"
+      class="m-0 text-2xl text-black group-hover:text-indigo-700 group-first:md:text-4xl dark:text-white dark:group-hover:text-indigo-400"
     >
       {post.data.title}
     </h4>
 
     <p
-      class="text-gray-500 dark:text-gray-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-300"
+      class="text-gray-500 group-hover:text-indigo-700 dark:text-gray-400 dark:group-hover:text-indigo-300"
     >
       <FormattedDate date={post.data.pubDate} />
     </p>

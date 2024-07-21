@@ -9,7 +9,7 @@ import { Image } from "astro:assets";
 import BlogCard from "../../components/BlogCard.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 );
 ---
 
@@ -19,13 +19,13 @@ const posts = (await getCollection("blog")).sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
-  <body class="w-screen flex justify-center dark:bg-slate-800 dark:text-white">
-    <div class="max-w-screen-lg w-full px-4">
+  <body class="flex w-screen justify-center dark:bg-slate-800 dark:text-white">
+    <div class="w-full max-w-screen-lg px-4">
       <Header />
 
       <main class="px-4">
         <section>
-          <ul class="flex flex-wrap md:gap-8 gap-4 list-none m-0 p-0">
+          <ul class="m-0 flex list-none flex-wrap gap-4 p-0 md:gap-8">
             {posts.map((post, i) => <BlogCard post={post} lazyLoad={i > 4} />)}
           </ul>
         </section>

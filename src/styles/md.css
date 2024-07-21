@@ -17,19 +17,19 @@
   h6 {
     margin: 0 0 1rem 0;
     color: rgb(var(--black));
-    /* line-height: 1.2; */
+    /* line-height: 1.4; */
   }
   h1 {
-    font-size: 3.052em;
+    font-size: 3em;
   }
   h2 {
-    font-size: 2.441em;
+    font-size: 2.5em;
   }
   h3 {
-    font-size: 1.953em;
+    font-size: 2em;
   }
   h4 {
-    font-size: 1.563em;
+    font-size: 1.6em;
   }
   h5 {
     font-size: 1.25em;
@@ -61,17 +61,19 @@
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+    margin: 1em 0;
   }
 
   code {
-    padding: 2px 5px;
+    padding: 2px 4px;
     background-color: rgb(var(--gray-light));
-    border-radius: 2px;
+    border-radius: 4px;
   }
 
   pre {
     padding: 1.5em;
     border-radius: 8px;
+    margin: 1em 0;
   }
 
   pre > code {
@@ -183,7 +185,6 @@
     h4,
     h5,
     h6 {
-      margin: 0 0 1rem 0;
       color: #ffffff;
     }
 

@@ -10,11 +10,17 @@ Storybook is an industry-leading, open source workshop for developing, documenti
 Today, we’re thrilled to announce our latest major release for React Native users: **React Native Storybook 7**! This aligns RN Storybook to core Storybook 7.6, enhances code re-use between `@storybook/react` and `@storybook/react-native`, and builds the foundations for more frequent and streamlined future releases.
 
 📖 Storybook 7 compatibility
+
 🧩 Improved support for Component Story Format 3
+
 🔒 TypeScript-first
+
 💨 Automatic story loading
+
 🛡️ Improved error handling
+
 📝 Enhanced markdown support
+
 🎛️ Auto-generation for controls
 
 ## Storybook 7 compatibility
@@ -47,24 +53,23 @@ export Basic: Story = {}
 At the same time, you can use the same `StoryObj` and `Meta types` as core Storybook. This follows improved support for [CSF3](https://storybook.js.org/blog/storybook-csf3-is-here/) and provides stronger type safety and autocompletion. [Learn more](https://storybook.js.org/blog/improved-type-safety-in-storybook-7/).
 
 ## TypeScript-first configuration
+
 TypeScript has become the language of choice across Storybook users and the JS ecosystem. RN Storybook 7 follows suit by updating all config files and templates to be TypeScript-first.
 
 RN Storybook 7’s main.ts:
 
 ```ts
 // .storybook/main.ts
-import { StorybookConfig } from '@storybook/react-native';
+import { StorybookConfig } from "@storybook/react-native";
 
 const main: StorybookConfig = {
-  stories: [
-    '../components/**/*.stories.?(ts|tsx|js|jsx)',
-  ],
+  stories: ["../components/**/*.stories.?(ts|tsx|js|jsx)"],
 
   addons: [
-    '@storybook/addon-ondevice-notes',
-    '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-backgrounds',
-    '@storybook/addon-ondevice-actions',
+    "@storybook/addon-ondevice-notes",
+    "@storybook/addon-ondevice-controls",
+    "@storybook/addon-ondevice-backgrounds",
+    "@storybook/addon-ondevice-actions",
   ],
 };
 
@@ -86,7 +91,7 @@ const config = {
   transformer: {
     unstable_allowRequireContext: true,
   },
-}
+};
 ```
 
 [Read more about this on my Dev.To](https://dev.to/dannyhw/dynamic-imports-supported-in-react-native-273j).

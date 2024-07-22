@@ -116,7 +116,15 @@ const posts = (await getCollection("blog"))
           </div>
 
           <div class="mt-10 flex flex-col gap-y-4">
-            <h2 class="text-3xl">Recent Blog Posts</h2>
+            <div class="flex flex-row items-center">
+              <h2 class="text-3xl">Recent Blog Posts</h2>
+
+              <a
+                href="/blog"
+                class="ml-auto text-blue-500 underline hover:text-blue-800 dark:hover:text-blue-300"
+                >View all</a
+              >
+            </div>
 
             <ul class="m-0 flex list-none flex-wrap gap-8 p-0">
               {

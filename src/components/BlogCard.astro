@@ -24,7 +24,7 @@ const { post, lazyLoad } = Astro.props;
           src={post.data.heroImage}
           loading={lazyLoad ? "lazy" : "eager"}
           alt=""
-          class="mb-2 aspect-video rounded-lg transition-all group-first:w-full group-hover:shadow-md md:mb-4 dark:group-hover:shadow-indigo-500"
+          class="mb-2 aspect-video rounded-lg border border-transparent transition-all group-first:w-full group-hover:shadow-md md:mb-4 dark:group-hover:border-gray-500 dark:group-hover:shadow-indigo-500"
         />
       )
     }
